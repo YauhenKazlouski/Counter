@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.39000000000000001" blue="0.78000000000000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="-"/>
+                                <buttonConfiguration key="configuration" style="plain" image="minus" catalog="system"/>
                                 <connections>
                                     <action selector="buttonDecreaseCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xRu-kV-Rtf"/>
                                 </connections>
@@ -43,7 +43,7 @@
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="+"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system"/>
                                 <connections>
                                     <action selector="buttonIncreaseCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h6M-n1-ZhX"/>
                                 </connections>
@@ -55,18 +55,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K67-rQ-MoN">
-                                <rect key="frame" x="16" y="89" width="361" height="391"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="История изменения:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EBc-pC-ZGl">
+                                <rect key="frame" x="16" y="98" width="361" height="345"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="counterLabel" destination="UvV-k9-cxg" id="YQ6-iG-O7T"/>
-                        <outlet property="historyOfChengesView" destination="K67-rQ-MoN" id="9JP-y5-K4u"/>
+                        <outlet property="logerChangeCounterView" destination="EBc-pC-ZGl" id="Sk1-vc-amM"/>
                         <outlet property="minusButton" destination="ZA6-jk-FsW" id="cgR-km-rqm"/>
                         <outlet property="plusButton" destination="FJL-XS-Pkl" id="BYC-98-SOJ"/>
                         <outlet property="stopButton" destination="EMW-N1-0F5" id="sNa-RP-b18"/>
@@ -78,7 +81,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="stop.fill" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
