@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    private var counter = 0
+final class ViewController: UIViewController {
+    
+    private var counter: Int = .zero
     
     @IBOutlet weak var logerChangeCounterView: UITextView!
     @IBOutlet weak var counterLabel: UILabel!
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         logerChangeCounterView.text = "История изменений:\n"
         counterLabel.text = "Значение счетчика: \(counter)"
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func buttonDecreaseCounter(_ sender: Any) {
@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             logerChangeCounterView.text += "\(getDateChanges()): значение изменено на -1\n"
         } else {
             logerChangeCounterView.text += "\(getDateChanges()): попытка уменьшить значение счетчика ниже 0\n"
-
+            
         }
     }
     
@@ -39,14 +39,14 @@ class ViewController: UIViewController {
         counter = 0
         changeCounterLabel()
         logerChangeCounterView.text += "\(getDateChanges()): значение сброшено\n"
-
+        
     }
     
     @IBAction func buttonIncreaseCounter(_ sender: Any) {
         counter += 1
         changeCounterLabel()
         logerChangeCounterView.text += "\(getDateChanges()): значение изменено на +1\n"
-
+        
     }
     
     private func changeCounterLabel() {
